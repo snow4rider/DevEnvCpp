@@ -16,7 +16,6 @@
 
 FROM ubuntu:22.04
 SHELL ["/bin/bash", "-c"]
-MAINTAINER ChristopherPisz
 LABEL Description="Chris' Ubuntu based development environment for C++"
 
 ARG USERNAME=developer
@@ -43,6 +42,14 @@ RUN apt update && apt -y --no-install-recommends install \
 
 # Package manager for C++ is what everyone needs in thier life
 RUN pip install conan
+
+# Clone, build, and install Google Test
+RUN git clone https://github.com/google/googletest.git /usr/src/googletest \
+    && cd /usr/src/googletest \
+    && cmake . \
+    && make \
+    && make install \
+    && rm -rf /usr/src/googletest
 
 # Create a non-root user and give them sudo
 RUN groupadd --gid $USER_GID $USERNAME && \
