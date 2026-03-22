@@ -16,7 +16,7 @@
 
 FROM ubuntu:22.04
 SHELL ["/bin/bash", "-c"]
-LABEL Description="Chris' Ubuntu based development environment for C++"
+LABEL Description="Matthew's Ubuntu based development environment for C++"
 
 ARG USERNAME=developer
 ARG USER_UID=1000
@@ -37,6 +37,7 @@ RUN apt update && apt -y --no-install-recommends install \
     ninja-build \
     gdb \
     wget \
+    golang-go \
     python3 \
     python3-pip
 
