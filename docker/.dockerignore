@@ -1,0 +1,33 @@
+# Exclude git configuration and history
+.git
+.gitignore
+
+# Exclude IDE/editor specific files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Exclude build artifacts and temporary files
+# The application binary is built inside the container, not locally.
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+dist/
+build/
+bin/
+
+# Exclude Go-specific build/test files
+vendor/         # Exclude locally vendored dependencies if using Go Modules
+*.test          # Test binary, built with `go test -c`
+*.out           # Output of the go coverage tool
+**/*_test.go    # Exclude test source files as they are generally not needed in the final image
+
+# Exclude documentation and Docker-specific files (though Dockerfile and .dockerignore are always sent to the daemon)
+*.md
+Dockerfile*
+docker-compose*
+.dockerignore
+LICENSE
