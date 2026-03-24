@@ -1,11 +1,36 @@
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
+# Binaries for programs
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+[56789a].out
+[56789ao].*
+
+# Test binary, generated with go test -c
+*-test
+*.test
+
+# Compiled Object files
+*.cgo1.go
+*.cgo2.c
+_cgo_.o
+_cgo_gotypes.go
+_obj/
+_test/
+
+# Go workspace file
+go.work*
+
+# Editor/IDE-specific files and directories
+.idea/         # JetBrains IDEs (GoLand, IntelliJ)
+.vscode/       # VS Code
+.sublime/      # Sublime Text
+.sess/         # Sublime Text session files
+.history/      # VS Code Local History
+*.swp          # Vim swap files
+*.swo          # Vim swap files
+
+# Operating system generated files
+.DS_Store      # macOS
+Thumbs.db      # Windows
